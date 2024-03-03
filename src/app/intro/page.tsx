@@ -1,3 +1,5 @@
-export default function Intro() {
-  return <></>;
+import { Intro } from "@/pageController";
+
+export default function IntroPage() {
+  return <Intro />;
 }
