@@ -12,6 +12,10 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/static/woff2/SUITE.css"
           rel="stylesheet"
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
       </head>
       <body>
         <Providers>{children}</Providers>

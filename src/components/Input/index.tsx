@@ -22,6 +22,7 @@ const Input: React.FC<Props> = ({
   <S.InputWrapper>
     <S.InputTitle>{title}</S.InputTitle>
     <S.Input
+      maxLength={5}
       type={type}
       value={inputValue}
       placeholder={placeHolder}
