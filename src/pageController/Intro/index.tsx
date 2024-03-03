@@ -16,7 +16,7 @@ const Intro = () => {
   const onClick = () => {
     if (name && num) {
       localStorage.setItem("userName", name);
-      localStorage.setItem("userNum", num);
+      localStorage.setItem("userNumber", num);
       push("/");
     }
   };
