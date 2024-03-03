@@ -1,67 +1,24 @@
 "use client";
 
-import { useAutoResizeTextArea } from "@/hooks";
-
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 import * as S from "./style";
+import { useAutoResizeTextArea } from "@/hooks";
+import { axiosInstance } from "@/api";
 
 const MAX_LENGTH = 500;
 
-function generateID() {
-  return Math.floor(1000 + Math.random() * 9000).toString();
+interface Props {
+  postSeq: string;
 }
 
-let comments = [
-  { id: generateID(), name: "Alice", comment: "와, 이거 진짜 재밌네요!" },
-  {
-    id: generateID(),
-    name: "Bob",
-    comment: "이런 건 어디서 구입할 수 있을까요?",
-  },
-  { id: generateID(), name: "Charlie", comment: "ㅋㅋㅋㅋㅋㅋ 대박!" },
-  {
-    id: generateID(),
-    name: "David",
-    comment: "진짜 미쳤네요... 근데 왜 그러셨어요?",
-  },
-  {
-    id: generateID(),
-    name: "Eva",
-    comment: "이거 보고 웃다가 눈물나네요 ㅋㅋㅋ",
-  },
-  { id: generateID(), name: "Frank", comment: "와우! 이건 정말 인상적이에요." },
-  {
-    id: generateID(),
-    name: "Grace",
-    comment: "이거 대박이네요. 저도 한 번 해봐야겠어요!",
-  },
-  {
-    id: generateID(),
-    name: "Hannah",
-    comment: "정말 멋있어요! 저도 이런 실력을 갖고 싶어요.",
-  },
-  { id: generateID(), name: "Ian", comment: "이거 보니까 기분이 좋아지네요." },
-  { id: generateID(), name: "Jenny", comment: "와... 이건 정말 신기하네요!" },
-  { id: generateID(), name: "Ian", comment: "이거 보니까 기분이 좋아지네요." },
-  { id: generateID(), name: "Jenny", comment: "와... 이건 정말 신기하네요!" },
-  { id: generateID(), name: "Ian", comment: "이거 보니까 기분이 좋아지네요." },
-  { id: generateID(), name: "Jenny", comment: "와... 이건 정말 신기하네요!" },
-];
-
-const dummy = {
-  title: "글의 제목",
-  content: "이 것은 질문입니다. 대단한 질문입니다.",
-  id: generateID(),
-  name: "Anon",
-  comments: comments,
-};
-
-const Detail = () => {
+const Detail: React.FC<Props> = ({ postSeq }) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const [inputValue, setInputValue] = useState<string>("");
   const [isMultiLine, setIsMultiLine] = useState(false);
+
+  const [data, setData] = useState<any>([]);
 
   useAutoResizeTextArea(textAreaRef.current, inputValue, setIsMultiLine);
 
@@ -73,15 +30,24 @@ const Detail = () => {
 
   const onClick = () => {};
 
+  const getPostDetail = async () => {
+    const res = await axiosInstance.get(`post/${postSeq}`);
+    setData(res.data);
+  };
+
+  useEffect(() => {
+    getPostDetail();
+  }, []);
+
   return (
     <S.Layout>
-      <S.Title>{dummy.title}</S.Title>
-      <S.Content>{`${dummy.id}-${dummy.name}`}</S.Content>
+      <S.Title>{data.title}</S.Title>
+      <S.Content>{`${data.id}-${data.name}`}</S.Content>
       <S.ContentWrapper>
-        <S.Content>{dummy.content}</S.Content>
+        <S.Content>{data.content}</S.Content>
       </S.ContentWrapper>
       <S.CommentList>
-        {dummy.comments.map((comment) => (
+        {data.comments.map((comment: any) => (
           <S.Comment>
             <S.Content>{`${comment.id}-${comment.name} : ${comment.comment}`}</S.Content>
           </S.Comment>

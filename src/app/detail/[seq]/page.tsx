@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function DetailPage({ params: { postSeq } }: Props) {
-  return <Detail />;
+  return <Detail postSeq={postSeq} />;
 }
