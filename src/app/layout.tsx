@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "QAGSM",
     images: [
       {
-        url: "/images/openGraph.png",
+        url: "/images/openGraph.jpg",
       },
     ],
     locale: "ko",
