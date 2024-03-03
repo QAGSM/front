@@ -3,14 +3,14 @@ import Providers from "./providers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gsm-qagsm.vercel.app"),
+  metadataBase: new URL("https://ga-gsm.vercel.app"),
   applicationName: "QAGSM",
   title: "QAGSM",
   description: "GSM 신입생들을 위한 모든 질문을 답변을 해드립니다!! 🏫",
   openGraph: {
     title: "QAGSM",
     description: "GSM 신입생들을 위한 모든 질문을 답변을 해드립니다!! 🏫",
-    url: "https://gsm-qagsm.vercel.app",
+    url: "https://ga-gsm.vercel.app",
     siteName: "QAGSM",
     images: [
       {
