@@ -20,7 +20,7 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const [isMultiLine, setIsMultiLine] = useState(false);
 
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<any>(null);
 
   useAutoResizeTextArea(textAreaRef.current, inputValue, setIsMultiLine);
 
