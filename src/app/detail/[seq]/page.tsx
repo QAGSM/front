@@ -1,9 +1,9 @@
 import { Detail } from "@/pageController";
 
 interface Props {
-  params: { postSeq: string };
+  params: { seq: string };
 }
 
-export default function DetailPage({ params: { postSeq } }: Props) {
-  return <Detail postSeq={postSeq} />;
+export default function DetailPage({ params: { seq } }: Props) {
+  return <Detail postSeq={seq} />;
 }
