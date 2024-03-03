@@ -14,6 +14,10 @@ export const CommentList = styled.div`
   gap: 2rem;
   height: 65vh;
   overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Title = styled.h1`

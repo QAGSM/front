@@ -33,12 +33,12 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
       const res = await axiosInstance.get(`/questions/${postSeq}`);
       setData(res.data);
     } catch (e: any) {
-      //   if (e.response.status === 404) window.location.href = "/";
+      if (e.response.status === 404) window.location.href = "/";
     }
   };
 
   const postComment = async () => {
-    const res = await axiosInstance.post(`post/${postSeq}`, {
+    const res = await axiosInstance.post(`/answers/${postSeq}`, {
       name: localStorage.getItem("userName"),
       schoolNumber: localStorage.getItem("userName"),
       content: inputValue,
@@ -53,7 +53,7 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
 
   return (
     <S.Layout>
-      {data.length > 0 && (
+      {data && (
         <>
           <S.Title>{data.title}</S.Title>
           <S.Content>{`${data.schoolNumber}-${data.name}`}</S.Content>
@@ -61,7 +61,7 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
             <S.Content>{data.content}</S.Content>
           </S.ContentWrapper>
           <S.CommentList>
-            {data.answerList.map((comment: any) => (
+            {data?.answerList?.map((comment: any) => (
               <S.Comment>
                 <S.Content>{`${comment.schoolNumber}-${comment.name} : ${comment.content}`}</S.Content>
               </S.Comment>
