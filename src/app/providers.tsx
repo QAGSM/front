@@ -1,14 +1,23 @@
 "use client";
 
-import React from "react";
+import { useRouter } from "next/router";
+import { ReactNode, useEffect } from "react";
 
 import { ThemeProvider } from "@emotion/react";
+import styled from "@emotion/styled";
 
 import { theme, GlobalStyle } from "@/style";
 
-import styled from "@emotion/styled";
+export default function Providers({ children }: { children: ReactNode }) {
+  const { push } = useRouter();
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    const userName = localStorage.getItem("userName");
+    const userNumber = localStorage.getItem("userNumber");
+
+    if (!userName || !userNumber) push("/");
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
