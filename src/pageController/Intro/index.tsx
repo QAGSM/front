@@ -6,6 +6,7 @@ import { Input } from "@/components";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Intro = () => {
   const [name, setName] = useState("");
@@ -18,6 +19,9 @@ const Intro = () => {
       localStorage.setItem("userName", name);
       localStorage.setItem("userNumber", num);
       push("/");
+      toast.success("인증되었습니다.");
+    } else {
+      toast.error("빈칸을 입력해주세요.");
     }
   };
 
