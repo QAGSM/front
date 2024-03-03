@@ -4,7 +4,7 @@ import * as S from "./style";
 
 import { Input } from "@/components";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const Intro = () => {
@@ -20,6 +20,18 @@ const Intro = () => {
       push("/");
     }
   };
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://app.embed.im/snow.js";
+    script.defer = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <S.Layout>

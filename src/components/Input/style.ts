@@ -4,6 +4,7 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  z-index: 130000000000000;
 `;
 
 export const InputTitle = styled.span`
