@@ -3,13 +3,13 @@ import styled from "@emotion/styled";
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 1.25rem;
 `;
 
 export const InputTitle = styled.span`
   color: ${({ theme }) => theme.color.grey["90"]};
 
-  font-size: 0.875rem;
+  font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.25rem;
 
@@ -28,7 +28,8 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.color.grey["50"]};
   }
 
-  font-size: 1rem;
+  outline: none;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.5rem;
 `;
