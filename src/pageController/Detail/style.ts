@@ -13,7 +13,7 @@ export const TextAreaContainer = styled.div`
   position: absolute;
   max-width: 560px;
   width: calc(100vw - 40px);
-  bottom: 1.5rem;
+  bottom: 3rem;
 `;
 
 export const TextArea = styled.textarea`

@@ -2,8 +2,7 @@
 
 import { useAutoResizeTextArea } from "@/hooks";
 
-import { useRouter } from "next/navigation";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 
 import * as S from "./style";
 
@@ -14,8 +13,6 @@ const Detail = () => {
 
   const [inputValue, setInputValue] = useState<string>("");
   const [isMultiLine, setIsMultiLine] = useState(false);
-
-  const { push } = useRouter();
 
   useAutoResizeTextArea(textAreaRef.current, inputValue, setIsMultiLine);
 
@@ -41,8 +38,8 @@ const Detail = () => {
           <S.UploadWrapper>
             <S.UploadButton onClick={onClick} disabled={inputValue.length > 5}>
               <svg
-                width="2.25rem"
-                height="2.25rem"
+                width="3.25rem"
+                height="3.25rem"
                 viewBox="0 0 36 36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
