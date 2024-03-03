@@ -6,6 +6,8 @@ import * as S from "./style";
 import { useAutoResizeTextArea } from "@/hooks";
 import { axiosInstance } from "@/api";
 
+import { toast } from "react-toastify";
+
 const MAX_LENGTH = 500;
 
 interface Props {
@@ -38,13 +40,14 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
   };
 
   const postComment = async () => {
-    const res = await axiosInstance.post(`/answers/${postSeq}`, {
-      name: localStorage.getItem("userName"),
-      schoolNumber: localStorage.getItem("userName"),
-      content: inputValue,
-    });
-
-    if (res.status < 300) window.location.reload();
+    if (inputValue.length > 3) {
+      const res = await axiosInstance.post(`/answers/${postSeq}`, {
+        name: localStorage.getItem("userName"),
+        schoolNumber: localStorage.getItem("userNumber"),
+        content: inputValue,
+      });
+      if (res.status < 300) window.location.reload();
+    } else toast.error("정상적으로 입력해주세요");
   };
 
   useEffect(() => {
@@ -77,10 +80,7 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
             />
             {inputValue.length > 0 && (
               <S.UploadWrapper>
-                <S.UploadButton
-                  onClick={postComment}
-                  disabled={inputValue.length > 5}
-                >
+                <S.UploadButton onClick={postComment}>
                   <svg
                     width="3.25rem"
                     height="3.25rem"

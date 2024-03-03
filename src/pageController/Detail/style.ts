@@ -105,4 +105,5 @@ export const UploadButton = styled.button`
   display: flex;
   background: none;
   border: 0;
+  cursor: pointer;
 `;
