@@ -12,7 +12,7 @@ export const CommentList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 70vh;
+  height: 65vh;
   overflow-y: scroll;
 `;
 

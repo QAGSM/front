@@ -76,6 +76,7 @@ const Detail = () => {
   return (
     <S.Layout>
       <S.Title>{dummy.title}</S.Title>
+      <S.Content>{`${dummy.id}-${dummy.name}`}</S.Content>
       <S.ContentWrapper>
         <S.Content>{dummy.content}</S.Content>
       </S.ContentWrapper>
