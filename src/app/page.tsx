@@ -1,3 +1,5 @@
+import { Main } from "@/pageController";
+
 export default function Home() {
-  return <></>;
+  return <Main />;
 }
