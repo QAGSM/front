@@ -5,6 +5,8 @@ import * as S from "./style";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { toast } from "react-toastify";
+
 const Board = () => {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
@@ -16,10 +18,10 @@ const Board = () => {
 
   const onSubmit = () => {
     if (title && content) {
-      console.log("성공");
       push("/");
+      toast.success("작성이 되었습니다.");
     } else {
-      console.log("실패");
+      toast.error("빈칸을 작성해주세요.");
     }
   };
 
