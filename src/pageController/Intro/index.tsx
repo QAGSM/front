@@ -5,10 +5,21 @@ import * as S from "./style";
 import { Input } from "@/components";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Intro = () => {
   const [name, setName] = useState("");
   const [num, setNum] = useState("");
+
+  const { push } = useRouter();
+
+  const onClick = () => {
+    if (name && num) {
+      localStorage.setItem("userName", name);
+      localStorage.setItem("userNum", num);
+      push("/");
+    }
+  };
 
   return (
     <S.Layout>
@@ -29,6 +40,7 @@ const Intro = () => {
         setInputValue={setNum}
         placeHolder="ex) 3309"
       />
+      <S.Button onClick={onClick}>다음으로</S.Button>
     </S.Layout>
   );
 };

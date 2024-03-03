@@ -32,4 +32,5 @@ const Layout = styled.div`
   height: 100vh;
   background-color: ${({ theme }) => theme.color.grey["30"]};
   padding: 0 20px;
+  position: relative;
 `;
