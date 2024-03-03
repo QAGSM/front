@@ -19,6 +19,7 @@ export const Title = styled.h1`
 
 export const BoardButtonContainer = styled.div`
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -43,6 +44,6 @@ export const BoardButton = styled.button`
 export const ListContainer = styled.div`
   margin-top: 2.875rem;
   width: 100%;
-  max-height: 37.625rem;
+  max-height: 38.625rem;
   overflow-y: auto;
 `;

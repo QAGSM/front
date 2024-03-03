@@ -19,7 +19,7 @@ const Board = () => {
   const onSubmit = () => {
     if (title && content) {
       push("/");
-      toast.success("작성이 되었습니다.");
+      toast.success("작성되었습니다.");
     } else {
       toast.error("빈칸을 작성해주세요.");
     }
