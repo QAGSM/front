@@ -21,11 +21,14 @@ const Board = () => {
     try {
       if (title && content) {
         const schoolNumber = localStorage.getItem("userNumber");
+        const name = localStorage.getItem("userName");
         const res = await axiosInstance.post("/questions", {
           title,
           content,
           schoolNumber,
+          name,
         });
+        console.log(res);
         push("/");
         toast.success("작성되었습니다.");
       } else {
