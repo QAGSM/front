@@ -4,13 +4,13 @@ import styled from "@emotion/styled";
 export const BoardWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
   color: white;
 `;
 
 export const BoardContainer = styled.div`
-  padding: 10px;
+  padding: 0.625rem;
 `;
 
 export const Title = styled.h1`
@@ -23,7 +23,7 @@ export const Title = styled.h1`
 
 export const Input = styled.input`
   padding: 1rem;
-  margin-top: 50px;
+  margin-top: 3.125rem;
   border-radius: 0.75rem;
   border: 0.0625rem solid ${({ theme }) => theme.color.grey["30"]};
   background: ${({ theme }) => theme.color.grey["40"]};
@@ -35,11 +35,11 @@ export const Input = styled.input`
   font-size: 17.2px;
   font-weight: 600;
   line-height: 1.5rem;
-  width: 300px;
+  width: 18.75rem;
 `;
 
 export const BoardTextArea = styled.textarea`
-  margin-top: 20px;
+  margin-top: 1.25rem;
   border-radius: 0.75rem;
   resize: none;
   padding: 1rem;
@@ -52,17 +52,17 @@ export const BoardTextArea = styled.textarea`
     color: ${({ theme }) => theme.color.grey["50"]};
   }
   outline: none;
-  font-size: 16.2px;
+  font-size: 1.0125rem;
   font-weight: 600;
   line-height: 1.5rem;
-  height: 500px;
+  height: 31.25rem;
 `;
 
 export const SubmitButton = styled.button`
-  margin-top: 40px;
-  max-width: 560px;
+  margin-top: 2.5rem;
+  max-width: 35rem;
   width: 100%;
-  height: 50px;
+  height: 3.125rem;
   border-radius: 1rem;
   background: ${({ theme }) => theme.color.primary["30"]};
   border: 0;
