@@ -72,7 +72,7 @@ const Detail: React.FC<Props> = ({ postSeq }) => {
           </S.CommentList>
           <S.TextAreaContainer>
             <S.TextArea
-              placeholder={"댓글을 작성해주세요"}
+              placeholder={"댓글을 작성해 주세요"}
               maxLength={MAX_LENGTH}
               value={inputValue}
               onChange={handleInputChange}

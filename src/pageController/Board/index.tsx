@@ -32,7 +32,7 @@ const Board = () => {
         push("/");
         toast.success("작성되었습니다.");
       } else {
-        toast.error("빈칸을 작성해주세요.");
+        toast.error("빈칸을 작성해 주세요.");
       }
     } catch {
       toast.error("글 작성에 실패하였습니다.");
@@ -44,17 +44,17 @@ const Board = () => {
       <S.BoardContainer>
         <S.Title>
           게시글을 <br />
-          작성해주세요
+          작성해 주세요
         </S.Title>
         <S.Input
-          placeholder="제목을 작성해주세요. (최대 50글자)"
+          placeholder="제목을 작성해 주세요. (최대 50글자)"
           maxLength={TITLELENGTH}
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         />
 
         <S.BoardTextArea
-          placeholder="내용을 작성해주세요. (최대 500글자)"
+          placeholder="내용을 작성해 주세요. (최대 500글자)"
           maxLength={CONTENTLENGTH}
           onChange={(e) => setContent(e.target.value)}
           value={content}
