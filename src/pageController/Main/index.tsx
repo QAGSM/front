@@ -79,7 +79,7 @@ const Main = () => {
       <S.Title>QA</S.Title>
       <S.BoardButtonContainer>
         <S.BoardButton onClick={() => push("/board")}>
-          게시글 작성하기
+          질문 작성하기
         </S.BoardButton>
         <S.ListContainer>
           {fetchedData?.map((item: any, index: any) => (

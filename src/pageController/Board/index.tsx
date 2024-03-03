@@ -43,7 +43,7 @@ const Board = () => {
     <S.BoardWrapper>
       <S.BoardContainer>
         <S.Title>
-          게시글을 <br />
+          질문을 <br />
           작성해 주세요
         </S.Title>
         <S.Input
