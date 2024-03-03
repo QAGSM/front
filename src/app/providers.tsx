@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 
 import { ThemeProvider } from "@emotion/react";
@@ -15,7 +15,7 @@ export default function Providers({ children }: { children: ReactNode }) {
     const userName = localStorage.getItem("userName");
     const userNumber = localStorage.getItem("userNumber");
 
-    if (!userName || !userNumber) push("/");
+    if (!userName || !userNumber) push("/intro");
   }, []);
 
   return (
