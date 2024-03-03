@@ -41,9 +41,8 @@ export const BoardButton = styled.button`
 `;
 
 export const ListContainer = styled.div`
-  margin-top: 1.875rem;
+  margin-top: 2.875rem;
   width: 100%;
-  max-height: 40.625rem;
+  max-height: 37.625rem;
   overflow-y: auto;
-  background-color: white;
 `;

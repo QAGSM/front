@@ -32,7 +32,7 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.color.grey["50"]};
   }
   outline: none;
-  font-size: 17.2px;
+  font-size: 1.075rem;
   font-weight: 600;
   line-height: 1.5rem;
   width: 18.75rem;
