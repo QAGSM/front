@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 
 import { ThemeProvider } from "@emotion/react";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styled from "@emotion/styled";
 
 import { theme, GlobalStyle } from "@/style";
@@ -21,6 +24,7 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <ToastContainer />
       <Layout>{children}</Layout>
     </ThemeProvider>
   );
