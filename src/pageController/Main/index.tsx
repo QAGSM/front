@@ -6,54 +6,6 @@ import { ListItem } from "@/components";
 import { axiosInstance } from "@/api";
 import { useEffect, useState } from "react";
 
-const DummyData = [
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-  {
-    title: "안녕하세요 저는 ..",
-  },
-];
-
 const Main = () => {
   const { push } = useRouter();
 
@@ -64,15 +16,12 @@ const Main = () => {
       .get("/questions", {})
       .then((response) => {
         const fetchedData = response.data;
-        console.log(fetchedData);
         setFetchedData(fetchedData);
       })
       .catch((error) => {
         console.error("데이터를 불러오는 중 오류 발생:", error);
       });
   }, []);
-
-  console.log(fetchedData);
 
   return (
     <S.MainWrapper>
@@ -83,13 +32,7 @@ const Main = () => {
         </S.BoardButton>
         <S.ListContainer>
           {fetchedData?.map((item: any, index: any) => (
-            <ListItem
-              key={index}
-              onClick={() => {
-                push(`/detail/${item.id}`);
-                console.log(item);
-              }}
-            >
+            <ListItem key={index} onClick={() => push(`/detail/${item.id}`)}>
               {item.title}
             </ListItem>
           ))}

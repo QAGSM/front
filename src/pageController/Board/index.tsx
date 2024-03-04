@@ -28,7 +28,6 @@ const Board = () => {
           schoolNumber,
           name,
         });
-        console.log(res);
         push("/");
         toast.success("작성되었습니다.");
       } else {
