@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
+const koreanOnlyRegex = /^[ㄱ-ㅎㅏ-ㅣ가-힣\s]*$/;
+
 const Intro = () => {
   const [name, setName] = useState("");
   const [num, setNum] = useState("");
@@ -15,7 +17,8 @@ const Intro = () => {
   const { push } = useRouter();
 
   const onClick = () => {
-    if (isNaN(parseInt(num))) toast.error("학번을 입력해주세요.");
+    if (isNaN(parseInt(num))) toast.error("학번을 확인해주세요.");
+    else if (!koreanOnlyRegex.test(name)) toast.error("이름을 확인해주세요.");
     else if (name && num) {
       localStorage.setItem("userName", name);
       localStorage.setItem("userNumber", num);
