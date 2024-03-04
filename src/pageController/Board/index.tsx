@@ -22,7 +22,8 @@ const Board = () => {
       if (title && content) {
         const schoolNumber = localStorage.getItem("userNumber");
         const name = localStorage.getItem("userName");
-        const res = await axiosInstance.post("/questions", {
+
+        await axiosInstance.post("/questions", {
           title,
           content,
           schoolNumber,
@@ -33,7 +34,9 @@ const Board = () => {
       } else {
         toast.error("빈칸을 작성해 주세요.");
       }
-    } catch {
+    } catch (error: any) {
+      if (error.response.status === 400)
+        toast.error("3학년은 질문을 할 수 없어요.");
       toast.error("글 작성에 실패하였습니다.");
     }
   };
