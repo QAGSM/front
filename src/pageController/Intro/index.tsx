@@ -15,7 +15,8 @@ const Intro = () => {
   const { push } = useRouter();
 
   const onClick = () => {
-    if (name && num) {
+    if (isNaN(parseInt(num))) toast.error("학번을 입력해주세요.");
+    else if (name && num) {
       localStorage.setItem("userName", name);
       localStorage.setItem("userNumber", num);
       push("/");
