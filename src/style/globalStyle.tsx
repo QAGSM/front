@@ -34,7 +34,7 @@ export function GlobalStyle() {
         }
 
         html {
-          overflow-x: hidden;
+          overflow: hidden;
           @media (max-width: 599px) {
             font-size: 15px;
           }
